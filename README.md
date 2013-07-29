@@ -5,14 +5,16 @@ Just a simple project to demonstrate how to use JavaScript to pass a message to 
 
 Key aspects
 
-**in JavaScript**
+**in JavaScript** get the values and send them to C++ inside an object:
 
+    Module = document.getElementById('module');    
     values = {
           "val1": Number(document.getElementById('val1').value),
-        	"val2": Number(document.getElementById('val2').value)
+          "val2": Number(document.getElementById('val2').value)
        	};
     msg = JSON.stringify(values);
     Module.postMessage(msg);
+    
 
 Then handle the message and send the response back to JavaScript
 
