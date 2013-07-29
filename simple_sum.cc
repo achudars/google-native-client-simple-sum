@@ -69,11 +69,17 @@ public:
 
         picojson::value v;
         //const string json2("{\"val1\":4,\"val2\":4}");
-        istringstream iss2((string)var_message.AsString());
-        string err = picojson::parse(v, iss2);
-        int val1 = (int)v.get("val1").get<double>();
-        int val2 = (int)v.get("val2").get<double>();
-        PostMessage( val1 + val2 );
+        // THIS ALSO WORKS: 
+         istringstream iss2((string)var_message.AsString());
+         string err = picojson::parse(v, iss2);
+         int val1 = (int)v.get("val1").get<double>();
+         int val2 = (int)v.get("val2").get<double>();
+         PostMessage( val1 + val2 );
+
+        //string iss2((string)var_message.AsString());
+        //int val1 = (int)v.get("val1").get<double>();
+        //int val2 = (int)v.get("val2").get<double>();
+        //PostMessage( val1 + val2 );
 
   }
 };
