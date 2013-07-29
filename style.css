@@ -1,0 +1,22 @@
+h1, h2, div {
+	font-family: 'Roboto', sans-serif;
+	color: #222;
+	text-align: center;
+}
+input {
+	width: 40%;
+	font-size: 10em;
+}
+.loading {
+	background: #3498db;
+}
+.success {
+	background: #2ecc71;
+}
+.fail {
+	background: #e74c3c;
+}
+#out {
+	width: 100%;
+	font-size: 10em;
+}

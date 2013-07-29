@@ -1,0 +1,7 @@
+{
+  "program": {
+    "x86-32": {"url": "simple_sum_x86_32.nexe"},
+    "x86-64": {"url": "simple_sum_x86_64.nexe"},
+    "arm":    {"url": "simple_sum_arm.nexe"}
+  }
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="script.js"></script>
+<head>
+  <title>Google Native Client Module</title>
+</head>
+<body onload="pageDidLoad()">
+<h1>Google Native Client Module</h1>
+<h2>Use JavaScript to ask C++ to calculate the sum of two values for you and tell you the result.</h2>
+<p>
+  <!-- Load the published .nexe.  This includes the 'nacl' attribute which
+  shows how to load multi-architecture modules.  Each entry in the "nexes"
+  object in the .nmf manifest file is a key-value pair: the key is the
+  instruction set architecture ('x86-32', 'x86-64', etc.); the value is a URL
+  for the desired NaCl module.
+  To load the debug versions of your .nexes, set the 'nacl' attribute to the
+  _dbg.nmf version of the manifest file.
+
+  Note: Since this NaCl module does not use any real-estate in the browser,
+  it's width and height are set to 0.
+
+  Note: The <EMBED> element is wrapped inside a <DIV>, which has both a 'load'
+  and a 'message' event listener attached.  This wrapping method is used
+  instead of attaching the event listeners directly to the <EMBED> element to
+  ensure that the listeners are active before the NaCl module 'load' event
+  fires.  This also allows you to use PPB_Messaging.PostMessage() (in C) or
+  pp::Instance.PostMessage() (in C++) from within the initialization code in
+  your NaCl module.
+  -->
+  <div id="listener">
+    <script type="text/javascript">
+      var listener = document.getElementById('listener');
+      listener.addEventListener('load', moduleDidLoad, true);
+      listener.addEventListener('message', handleMessage, true);
+    </script>
+
+    <embed name="nacl_module"
+       id="simple_sum"
+       width=0 height=0
+       src="simple_sum.nmf"
+       type="application/x-nacl" />
+  </div>
+</p>
+
+<h2>Status: <span id="status_field">NO-STATUS</span></h2>
+
+<form onchange="reload()">
+  <h2>Input:</h2>
+  <div>
+    <input type="number" id="val1" name="val1" value="3">
+    <input type="number" id="val2" name="val2" value="4">
+  </div>
+  <br><br>
+  <h2>Output:</h2> <div id="out">7</div>
+</form>
+
+
+
+</body>
+</html>
