@@ -3,6 +3,10 @@ Simple Sum Calculation using Google Native Client (NaCl)
 
 Just a simple project to demonstrate how to use JavaScript to pass a message to C++ code to calculate the sum of two values and let C++ code then send back the sum to JavaScript and add it to the DOM
 
+
+<a href="http://imgur.com/GhIXLgW"><img src="http://i.imgur.com/GhIXLgW.png" title="Hosted by imgur.com" /></a>
+
+
 Key aspects
 
 **in JavaScript** get the values and send them to C++ inside an object:
