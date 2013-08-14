@@ -4,6 +4,14 @@ Simple Sum Calculation using Google Native Client (NaCl)
 Just a simple project to demonstrate how to use JavaScript to pass a message to C++ code to calculate the sum of two values and let C++ code then send back the sum to JavaScript and add it to the DOM
 
 
+Note
+----
+
+ - use Google Chrome 28+
+ - enable Native Client in chrome://flags/
+ - disable Native Client GDB-based debugging in chrome://flags/
+
+
 <a href="http://imgur.com/GhIXLgW"><img src="http://i.imgur.com/GhIXLgW.png" title="Hosted by imgur.com" /></a>
 
 
